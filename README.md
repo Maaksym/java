@@ -77,11 +77,12 @@ DoctorSchedule schedule = new DoctorSchedule();
 
 W tym przykładzie dla poniedziałku (MONDAY) godziny pracy są ustawione od 9:00 do 17:00, a metoda getWeeklySchedule() wyświetla harmonogram na cały tydzień.
 
-Ten kod dodaje funkcjonalność do systemu zarządzania przychodnią, umożliwiając dodawanie lub przeglądanie harmonogramu pracy lekarza.
-Akcje case 7 i case 8 są zaimplementowane w bloku switch menu głównego aplikacji. 
+
 Przypadek 7: 
 Przypisywanie godzin pracy dla lekarza Program żąda identyfikatora lekarza. 
-Metoda clinic.findDoctorById(id) jest używana do znalezienia lekarza z wprowadzonym identyfikatorem. Jeśli lekarz zostanie znaleziony: Żądany jest dzień roboczy (day) oraz godziny rozpoczęcia i zakończenia pracy (startTime i endTime). DayOfWeek.valueOf(...) konwertuje wprowadzoną wartość do formatu DayOfWeek (np. MONDAY). LocalTime.parse(...) odczytuje czas w formacie HH:mm. Wywoływana jest metoda scheduleDoctor.getSchedule().setDoctorSchedule(day, startTime, endTime), która ustawia godziny pracy lekarza dla wybranego dnia. Zostanie wyświetlone potwierdzenie dodania godzin pracy. Jeśli lekarz o tym identyfikatorze nie zostanie znaleziony, zostanie wyświetlony komunikat "Lekarza nie znaleziono.". 
+Metoda clinic.findDoctorById(id)
+jest używana do znalezienia lekarza z wprowadzonym identyfikatorem.
+Jeśli lekarz zostanie znaleziony: Żądany jest dzień roboczy (day) oraz godziny rozpoczęcia i zakończenia pracy (startTime i endTime). DayOfWeek.valueOf(...) konwertuje wprowadzoną wartość do formatu DayOfWeek (np. MONDAY). LocalTime.parse(...) odczytuje czas w formacie HH:mm. Wywoływana jest metoda scheduleDoctor.getSchedule().setDoctorSchedule(day, startTime, endTime), która ustawia godziny pracy lekarza dla wybranego dnia. Zostanie wyświetlone potwierdzenie dodania godzin pracy. Jeśli lekarz o tym identyfikatorze nie zostanie znaleziony, zostanie wyświetlony komunikat "Lekarza nie znaleziono.". 
 Przypadek 8: 
 Wyświetlanie harmonogramu pracy lekarza Program żąda identyfikatora lekarza. Metoda clinic.findDoctorById(id) jest używana do znalezienia lekarza o wprowadzonym identyfikatorze. Jeśli lekarz zostanie znaleziony: Wywoływana jest metoda getWeeklySchedule(), która wyświetla harmonogram pracy lekarza na cały tydzień. Jeśli lekarz o podanym identyfikatorze nie zostanie znaleziony, zostanie wyświetlony komunikat "Lekarza nie znaleziono".
 
