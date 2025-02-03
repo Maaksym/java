@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
-// Klasa do przechowywania informacji o pacjencie
+// Class to store patient information
 class Patient {
     private String firstName;
     private String lastName;
@@ -33,7 +33,7 @@ class Patient {
     }
 }
 
-// Klasa do przechowywania informacji o lekarzu
+// Class to store information about the doctor
 class Doctor {
     private String firstName;
     private String lastName;
@@ -41,7 +41,7 @@ class Doctor {
     private String phoneNumber;
     private String email;
     private List<String> specializations;
-    private DoctorSchedule schedule;  // Harmonogram pracy lekarza
+    private DoctorSchedule schedule;  // Doctor's schedule
 
     public Doctor(String firstName, String lastName, String id, String phoneNumber, String email) {
         this.firstName = firstName;
@@ -66,7 +66,7 @@ class Doctor {
     }
 }
 
-//Klasa jest przeznaczona do przechowywania i zarządzania harmonogramem pracy lekarza
+//The class is designed to store and manage a doctor's work schedule.
 class DoctorSchedule {
     private Map<DayOfWeek, WorkHours> schedule;
 
@@ -109,7 +109,7 @@ class DoctorSchedule {
     }
 }
 
-// Klasa do zarządzania pacjentami i lekarzami
+// A class for managing patients and doctors
 class ClinicManagementSystem {
     private List<Patient> patients;
     private List<Doctor> doctors;
@@ -174,7 +174,7 @@ public class Main {
 
         System.out.println("Witamy w systemie zarządzania kliniką!");
 
-        // Dodawanie testowego pacjenta i lekarza do demonstracji
+        // Adding a test patient and doctor to the demonstration
         clinic.addPatient(new Patient("Anna", "Kowalska", "12345678901", "1985-04-12", 38, "123456789", "anna.k@example.com"));
         Doctor doctor = new Doctor("Piotr", "Nowak", "D001", "987654321", "piotr.n@example.com");
         doctor.addSpecialization("Kardiolog");
@@ -194,7 +194,7 @@ public class Main {
             System.out.println("0. Wyjście");
 
             int choice = scanner.nextInt();
-            scanner.nextLine();  // Pobieramy pozostałość linii
+            scanner.nextLine();  // We retrieve the remainder of the line
 
             switch (choice) {
                 case 1:
@@ -204,7 +204,7 @@ public class Main {
                     String pesel = scanner.nextLine();
                     String birthDate = scanner.nextLine();
                     int age = scanner.nextInt();
-                    scanner.nextLine();  // Pobieramy pozostałość linii
+                    scanner.nextLine();  // We retrieve the remainder of the line
                     String phone = scanner.nextLine();
                     String email = scanner.nextLine();
                     clinic.addPatient(new Patient(firstName, lastName, pesel, birthDate, age, phone, email));
